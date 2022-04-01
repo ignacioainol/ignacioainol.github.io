@@ -2,25 +2,26 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+import { Animated } from "react-animated-css";
 
 const Header = () => {
 
     return (
         <AppBar position="static">
-            <Container maxWidth="lg">
+            <Container maxWidth={false}>
                 <Toolbar disableGutters>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                    >
-                        <img src="/images/ia-logo.png" className='logo-img' alt="" />
-                    </Typography>
+                    <Animated animationIn="bounceInDown" animationOut="fadeOut" isVisible={true}>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                        >
+                            <img src="/images/ia-logo.png" className='logo-img' alt="" />
+                        </Typography>
+                    </Animated>
 
                     <Typography
                         variant="h6"
@@ -32,7 +33,9 @@ const Header = () => {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}></Box>
 
-                    <h1>we_rock !</h1>
+                    <Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}>
+                        <h1>we_rock !</h1>
+                    </Animated>
                 </Toolbar>
             </Container>
         </AppBar>
